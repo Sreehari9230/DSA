@@ -13,3 +13,7 @@ batMan.Nemisis = 'Joker'
 delete batMan["gf-Name"]
 console.log(batMan);
 batMan.fullName()
+
+console.log(Object.keys(batMan))
+console.log(Object.values(batMan))
+console.log(Object.entries(batMan))

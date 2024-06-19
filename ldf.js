@@ -1,41 +1,41 @@
-class Node{
-    constructor(value){
-        this.value = value
-        this.next = null
-    }
-}
+// class Node{
+//     constructor(value){
+//         this.value = value
+//         this.next = null
+//     }
+// }
 
-class LinkedList{
-    constructor(){
-        this.head = null
-        this.size = 0
-        this.tail = null
-    }
+// class LinkedList{
+//     constructor(){
+//         this.head = null
+//         this.size = 0
+//         this.tail = null
+//     }
 
-    getSize(){
-        return LinkedList.size
-    }
+//     getSize(){
+//         return LinkedList.size
+//     }
 
-    isEmpty(){
-        return this.size === null
-    }
+//     isEmpty(){
+//         return this.size === null
+//     }
 
-    insert(value,index){
-        if(this.isEmpty()){
-            this.head = value
-            this.tail = value
-            this.tail.next = this.head
+//     insert(value,index){
+//         if(this.isEmpty()){
+//             this.head = value
+//             this.tail = value
+//             this.tail.next = this.head
 
-        }else if(index === 0){
-            this.head.next = this.head
-            this.head.value = value
-            this.tail = this.head.next
-            this.tail.next = this.head
-        }else{
-            let t
-        }
-    }
-}
+//         }else if(index === 0){
+//             this.head.next = this.head
+//             this.head.value = value
+//             this.tail = this.head.next
+//             this.tail.next = this.head
+//         }else{
+//             let t
+//         }
+//     }
+// }
 
 // // 1,4,5,6,,8,10,22,34
 // function Binary(arr,value){
@@ -66,13 +66,31 @@ class LinkedList{
 //     return string.substr(0,1)
 // }
 
-let str = 'hellosreeharihowareyou'
-let strArr = str.split('')
-let output = []
-for(let i=0;i<strArr.length;i++){
-    if(strArr[i] == 'o'){
-        strArr[i] = 'k'
+
+function rec(str) {
+    if (str === '') {
+        return str;
     }
-     output.push(strArr[i])
+
+    let firstChar = str.substr(0, 1);
+    if ('aeiouAEIOU'.includes(firstChar)) {
+        firstChar = '1';
+    }
+
+    return firstChar + rec(str.substr(1));
 }
-console.log(output.join(''))
+
+// Test the function
+console.log(rec("hellosreeharihowareyou")); // Output: h1ll1sr11h1r1h1w1r1y11
+
+
+// let str = 'hellosreeharihowareyou'
+// let strArr = str.split('')
+// let output = []
+// for(let i=0;i<strArr.length;i++){
+//     if(strArr[i] == 'o'){
+//         strArr[i] = 'k'
+//     }
+//      output.push(strArr[i])
+// }
+// console.log(output.join(''))

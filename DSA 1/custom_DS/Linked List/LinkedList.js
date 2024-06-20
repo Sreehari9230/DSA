@@ -126,18 +126,18 @@ class LinkedList {
         }
         return -1
     }
-
-    reverse(){
-        let prev = null
-        let curr = this.head
-        while(curr){
-            let next = curr.next
-            curr.next = prev
-            prev = curr
-            curr = next
+    reverse() {
+        let prev = null;
+        let curr = this.head;
+        while (curr) {
+          let next = curr.next;
+          curr.next = prev;
+          prev = curr;
+          curr = next;
         }
-        this.head = prev
-    }
+        this.head = prev;
+      }
+
 
     print() {
         if (this.isEmpty()) {
@@ -152,45 +152,90 @@ class LinkedList {
             console.log(listValues);
         }
     }
+    isCircular() {
+        if (this.isEmpty()) {
+            return false; // An empty list is not circular
+        }
+    
+        let slow = this.head;
+        let fast = this.head;
+    
+        while (fast !== null && fast.next !== null) {
+            slow = slow.next;       // Move slow pointer one step
+            fast = fast.next.next;  // Move fast pointer two steps
+    
+            if (slow === fast) {
+                return true; // Cycle detected
+            }
+        }
+        return false; // No cycle
+    }
+    
+
+    deleteMiddle() {
+        if (this.isEmpty()) {
+            return null;
+        }
+        if (this.size === 1) {
+            const value = this.head.value;
+            this.head = null;
+            this.size--;
+            return value;
+        }
+        let slow = this.head
+        let fast = this.head
+        let prev = null
+
+        while(fast!=null && fast.next != null){
+            fast = fast.next.next
+            slow = slow.next
+            prev = slow
+        }
+
+        let midEle = slow.value
+        if(prev){
+        prev.next = slow.next
+        }else{
+            this.head = this.head.next
+        }
+        this.removeValue(midEle)
+        return midEle
+    }
 }
 
 const list = new LinkedList()
-console.log('list is empty?', list.isEmpty());
+// console.log('list is empty?', list.isEmpty());
+// console.log('list size', list.getSize());
+// list.print()
+
+list.append(1)
+list.append(2)
+list.append(3)
+list.append(4)
+list.append(5)
+list.append(6)
+list.append(7)
+list.append(8)
+list.append(9)
+list.append(10)
+list.append(11)
+list.print()
 console.log('list size', list.getSize());
+
+console.log('deleted element',list.deleteMiddle())
 list.print()
 
-// list.prepend(10)
-// list.append(10)
-list.insert(10, 0)
+console.log('deleted element',list.deleteMiddle())
 list.print()
 
-// list.prepend(20)
-// list.append(20)
-list.insert(20, 1)
+console.log('deleted element',list.deleteMiddle())
 list.print()
+console.log(list.isCircular());
 
 
 
-// list.prepend(30)
-// list.append(30)
-list.insert(30, 1)
-list.print()
-console.log(list.getSize());
 
-// console.log(list.removeFrom(10));
 
-// console.log(list.removeFrom(0));
-// list.print()
 
-// console.log(list.removeFrom(1));
-// list.print()
-// console.log(list.getSize())
 
-// console.log(list.removeValue(10));
-// list.print()
-// console.log(list.getSize());
-
-// console.log(list.search(40));
-list.reverse()
-list.print()
 

@@ -85,6 +85,17 @@ class doublyLinkedList{
 
         }
     }
+    isCircuar(){
+        if(this.isEmpty()){
+            console.log('liat is empty')
+        }else{
+            if(this.tail.next = this.head){
+                return true
+            }else{
+                return false
+            }
+        }
+    }
 }
 
 
@@ -101,6 +112,8 @@ list.append(20)
 console.log('What is the size of this list :', list.getSize());
 console.log(list.print())
 console.log(list.printInReverse())
+console.log(list.isCircuar())
+
 
 
 

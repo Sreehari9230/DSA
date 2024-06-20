@@ -115,3 +115,21 @@ function factorial123(n){
     }
 }
 console.log('123',factorial(5));
+
+
+
+function rec(str) {
+    if (str === '') {
+        return str;
+    }
+
+    let firstChar = str.substr(0, 1);
+    if ('aeiouAEIOU'.includes(firstChar)) {
+        firstChar = '1';
+    }
+
+    return firstChar + rec(str.substr(1));
+}
+
+// Test the function
+console.log(rec("hellosreeharihowareyou")); // Output: h1ll1sr11h1r1h1w1r1y11

@@ -90,5 +90,4 @@
 
 //sum of values of linked list using recursion
 // insersion in a doubly linked list
-//there is a string we need to find the number of each vowels in it   like a:1,b:2
 //implement recursion in biry search

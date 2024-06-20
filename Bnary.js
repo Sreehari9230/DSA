@@ -1,23 +1,4 @@
-///find target in an array
 
-function BinarySearch(arr,target){
-    let start = 0
-    let end = arr.length-1
-    while(start<=end){
-        let middle = Math.floor((start+end)/2)
-        if(arr[middle] == target){
-            arr[middle] = 0
-            return arr
-        }else if(arr[middle] < target){
-            start = middle + 1
-        }else{
-            end = middle - 1
-        }
-    }
-    return 'target dosnt exist'
-}
-
-console.log(BinarySearch([1,2,3,4,5],33))
 
 
 //change every vowel in the string to0

@@ -19,7 +19,7 @@ class LinkedList {
     }
     insert(value, index) {
         if (index > this.size || index < 0) {
-
+            return null
         } else if (index == 0) {
             this.prepend(value)
         } else {
@@ -74,13 +74,13 @@ class LinkedList {
         return removeNode.value
     }
     search(value) {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             return -1
         }
-        let i=0
+        let i = 0
         let curr = this.head
-        while(curr){
-            if(curr.value === value){
+        while (curr) {
+            if (curr.value === value) {
                 return i
             }
             i++
@@ -111,6 +111,7 @@ class LinkedList {
         }
         this.size++
     }
+
     reversing() {
         let prev = null
         let curr = this.head
@@ -133,6 +134,24 @@ class LinkedList {
                 curr = curr.next
             }
             console.log(list);
+        }
+    }
+
+    isCirular() {
+        if (this.isEmpty()) {
+            console.log('List is empty');
+        } else {
+            let slow = this.head
+            let fast = this.head
+            while (fast != null && fast.next != null) {
+                slow = slow.next
+                fast = fast.next.next
+                if (slow === fast) {
+                    return true
+                }
+            }
+            return false
+
         }
     }
 }
@@ -158,4 +177,6 @@ Llist.print()
 console.log(Llist.getSize())
 console.log(Llist.isEmpty())
 console.log(Llist.search(40))
+console.log(Llist.isCirular())
+
 

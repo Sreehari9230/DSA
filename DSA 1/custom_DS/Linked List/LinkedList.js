@@ -47,6 +47,8 @@ class LinkedList {
 
     }
 
+    
+
     insert(value, index) {
         if (index < 0 || index > this.size) {
             return null

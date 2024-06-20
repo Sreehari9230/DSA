@@ -23,10 +23,26 @@ class DLinkedList {
 
     }
     removebyIndex(index) {
-
+        
     }
     removebyValue(value) {
-
+        if(this.isEmpty()){
+            return null
+        }else if(value === this.head.value){
+            this.head = this.head.next
+            this.size--
+        }else{
+            let prev = this.head
+            while(prev.head && prev.next.value!=value){
+                prev = prev.next
+            }
+            if(prev.next){
+                let rNode = prev.next
+                prev.next = rNode.next
+                this.size--
+                return rNode
+            }
+        }
     }
     append(value) {
         let node = new Node(value)

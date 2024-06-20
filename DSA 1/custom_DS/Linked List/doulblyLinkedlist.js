@@ -48,11 +48,25 @@ class doublyLinkedList{
     }
     
     removeFrmFront(){
-
+        if(this.size == 1){
+            this.head = null
+            this.tail = null
+        }else{
+            this.head = this.head.next
+            this.head.prev = null
+        }
+        this.size--
     }
 
     removeFrmEnd(){
-
+        if(this.size == 1){
+            this.head = null
+            this.tail = null
+        }else{
+            this.tail = this.tail.prev
+            this.tail.next = null
+        }
+        this.size--
     }
 
     print(){

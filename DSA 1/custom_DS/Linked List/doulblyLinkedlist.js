@@ -79,7 +79,7 @@ class doublyLinkedList{
                 list +=  `${curr.value} `
                 curr = curr.next 
             }
-            return (list)
+            console.log(list);
         }
     }
 
@@ -99,15 +99,41 @@ class doublyLinkedList{
 
         }
     }
-    isCircuar(){
+    isCircluar(){
         if(this.isEmpty()){
             console.log('liat is empty')
         }else{
-            if(this.tail.next = this.head){
-                return true
-            }else{
-                return false
+            let slow = this.head
+            let fast = this.head
+            while(fast !=null && fast.next != null){
+                slow = slow.next
+                fast = fast.next.next
+                if(slow == fast){
+                    return true
+                }
             }
+            return false
+        }
+    }
+    insert(value,index){
+        const node = new Node(value)
+        if(index>=this.size || index<0){
+            return null
+        }else if(index == 0){
+            this.prepend(value)
+        }else{
+            let prev = this.head
+            for(let i=0;i<index-1;i++){
+                prev = prev.next
+            }
+            let next = prev.next
+            prev.next = node
+            node.prev = prev
+            node.next = next
+            if(next){
+                next.prev = node
+            }
+            this.size++
         }
     }
 }
@@ -116,17 +142,27 @@ class doublyLinkedList{
 const list = new doublyLinkedList()
 
 
-console.log('is this list empty :', list.isEmpty());
-console.log('What is the size of this list :', list.getSize());
-list.prepend(10)
+// console.log('is this list empty :', list.isEmpty());
+// console.log('What is the size of this list :', list.getSize());
+// list.prepend(10)
+// list.print()
+// console.log('What is the size of this list :', list.getSize());
+// list.prepend(0)
+// list.append(20)
+// console.log('What is the size of this list :', list.getSize());
+// console.log(list.print())
+// console.log(list.printInReverse())
+// console.log(list.isCircuar())
+
+list.append(1)
+list.append(2)
+list.append(4)
 list.print()
-console.log('What is the size of this list :', list.getSize());
-list.prepend(0)
-list.append(20)
-console.log('What is the size of this list :', list.getSize());
-console.log(list.print())
-console.log(list.printInReverse())
-console.log(list.isCircuar())
+list.insert(3,2)
+list.print()
+console.log(list.isCircular());
+
+
 
 
 

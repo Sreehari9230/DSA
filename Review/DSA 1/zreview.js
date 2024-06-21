@@ -91,3 +91,11 @@
 //sum of values of linked list using recursion
 // insersion in a doubly linked list
 //implement recursion in biry search
+
+
+
+function fun(a=0,b=0,c=0,d=0){
+    return a+b+c+d
+}
+
+console.log(fun(1,2,3,4))

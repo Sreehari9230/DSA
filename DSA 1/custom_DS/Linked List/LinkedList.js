@@ -146,9 +146,9 @@ class LinkedList {
             console.log("the list is empty")
         } else {
             let curr = this.head
-            let listValues = ''
+            let listValues = []
             while (curr) {
-                listValues += `${curr.value} `
+                listValues.push(curr.value)
                 curr = curr.next
             }
             console.log(listValues);
@@ -203,7 +203,18 @@ class LinkedList {
         this.removeValue(midEle)
         return midEle
     }
+
+    SumofList(node = this.head){
+        if(node == null){
+            return 0
+        }else{
+            return node.value + this.SumofList(node.next)
+        }
+    }
 }
+
+
+
 
 const list = new LinkedList()
 // console.log('list is empty?', list.isEmpty());
@@ -222,17 +233,18 @@ list.append(9)
 list.append(10)
 list.append(11)
 list.print()
-console.log('list size', list.getSize());
+console.log(list.SumofList());
+// console.log('list size', list.getSize());
 
-console.log('deleted element',list.deleteMiddle())
-list.print()
+// console.log('deleted element',list.deleteMiddle())
+// list.print()
 
-console.log('deleted element',list.deleteMiddle())
-list.print()
+// console.log('deleted element',list.deleteMiddle())
+// list.print()
 
-console.log('deleted element',list.deleteMiddle())
-list.print()
-console.log(list.isCircular());
+// console.log('deleted element',list.deleteMiddle())
+// list.print()
+// console.log(list.isCircular());
 
 
 

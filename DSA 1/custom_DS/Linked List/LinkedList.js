@@ -44,10 +44,7 @@ class LinkedList {
             prev.next = node
         }
         this.size++
-
     }
-
-    
 
     insert(value, index) {
         if (index < 0 || index > this.size) {
@@ -114,17 +111,17 @@ class LinkedList {
     }
 
     search(value) {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             return -1
         }
-        let i=0
+        let i = 0
         let curr = this.head
-        while(curr){
-           if(curr.value === value){
-            return i
-           } 
-           curr = curr.next
-           i++
+        while (curr) {
+            if (curr.value === value) {
+                return i
+            }
+            curr = curr.next
+            i++
         }
         return -1
     }
@@ -132,13 +129,13 @@ class LinkedList {
         let prev = null;
         let curr = this.head;
         while (curr) {
-          let next = curr.next;
-          curr.next = prev;
-          prev = curr;
-          curr = next;
+            let next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
         this.head = prev;
-      }
+    }
 
 
     print() {
@@ -158,93 +155,133 @@ class LinkedList {
         if (this.isEmpty()) {
             return false; // An empty list is not circular
         }
-    
+
         let slow = this.head;
         let fast = this.head;
-    
+
         while (fast !== null && fast.next !== null) {
             slow = slow.next;       // Move slow pointer one step
             fast = fast.next.next;  // Move fast pointer two steps
-    
+
             if (slow === fast) {
                 return true; // Cycle detected
             }
         }
         return false; // No cycle
     }
-    
 
-    deleteMiddle() {
+    middleele() {
         if (this.isEmpty()) {
-            return null;
-        }
-        if (this.size === 1) {
-            const value = this.head.value;
-            this.head = null;
-            this.size--;
-            return value;
-        }
-        let slow = this.head
-        let fast = this.head
-        let prev = null
+            return null
+        } else if (this.size == 1) {
+            return this.head.value
+        } else {
+            let slow = this.head
+            let fast = this.head
+            while (fast != null && fast.next != null) {
+                slow = slow.next
+                fast = fast.next.next
+            }
+            console.log('this is the middle element :', slow.value);
 
-        while(fast!=null && fast.next != null){
-            fast = fast.next.next
-            slow = slow.next
-            prev = slow
+            // let curr = slow
+            // while (curr) {
+            //     if (curr.value % slow.value === 0) {
+            //         return true
+            //     }
+            //     curr = curr.next
+            // }
+            // return false
         }
-
-        let midEle = slow.value
-        if(prev){
-        prev.next = slow.next
-        }else{
-            this.head = this.head.next
-        }
-        this.removeValue(midEle)
-        return midEle
     }
 
-    SumofList(node = this.head){
-        if(node == null){
+    SumofList(node = this.head) {
+        if (node == null) {
             return 0
-        }else{
+        } else {
             return node.value + this.SumofList(node.next)
         }
     }
+
+    removeDup() {
+        if (list.isEmpty()) {
+            return null
+        } else if (this.size == 1) {
+
+        } else {
+            let slow = this.head
+            let fast = this.head.next
+
+            while (fast != null) {
+                if (slow.value === fast.value) {
+                    slow = slow.next
+                    fast = fast.next
+                    this.removeValue(slow.value)
+                } else {
+                    slow = slow.next
+                    fast = fast.next
+                }
+
+            }
+        }
+    }
+
+    rev(){
+        
+    }
+
 }
 
 
 
 
+// const list = new LinkedList()
+// // console.log('list is empty?', list.isEmpty());
+// // console.log('list size', list.getSize());
+// // list.print()
 const list = new LinkedList()
-// console.log('list is empty?', list.isEmpty());
-// console.log('list size', list.getSize());
+
+// function StringToLinkedlist(str) {
+//     for (char of str) {
+//         list.append(char)
+//     }
+//     // list.print()
+// }
+
+// StringToLinkedlist('Arshadkk')
 // list.print()
 
-list.append(1)
+// list.removeDup()
 list.append(2)
-list.append(3)
 list.append(4)
-list.append(5)
 list.append(6)
-list.append(7)
 list.append(8)
-list.append(9)
 list.append(10)
-list.append(11)
+list.append(19)
+list.append(14)
+list.append(16)
+list.append(18)
+list.append(20)
+list.append(22)
 list.print()
 console.log(list.SumofList());
-// console.log('list size', list.getSize());
-
-// console.log('deleted element',list.deleteMiddle())
+// console.log(list.middleele())
+// list.removeDup()
 // list.print()
 
-// console.log('deleted element',list.deleteMiddle())
-// list.print()
 
-// console.log('deleted element',list.deleteMiddle())
-// list.print()
-// console.log(list.isCircular());
+// console.log(list.SumofList());
+// // console.log('list size', list.getSize());
+
+// // console.log('deleted element',list.deleteMiddle())
+// // list.print()
+
+// // console.log('deleted element',list.deleteMiddle())
+// // list.print()
+
+// // console.log('deleted element',list.deleteMiddle())
+// // list.print()
+// // console.log(list.isCircular());
 
 
 

@@ -90,18 +90,6 @@
 // console.log(BSearch([1, 3, 5, 2, 6, 3, 6, 34, 6, 4], 3))
 
 
-// function reverseString(str) {
-//     // Base case: if the string is empty or has only one character
-//     if (str === "") {
-//         return str;
-//     }
-//     // Recursive case: call the function with the substring (excluding the first character)
-//     // and append the first character to the end
-//     return reverseString(str.substr(1)) + str.charAt(0);
-// }
-
-
-
 // ///find target in an array
 
 // function BinarySearch(arr, target) {
@@ -147,3 +135,12 @@
 // }
 
 // console.log(BinarySearch([,2,3,4,5,6,7,8],8));
+
+// function reverseString(str) {
+//     if (str === "") {
+//         return str;
+//     }
+//     return reverseString(str.substr(1)) + str.charAt(0);
+// }
+
+// console.log(reverseString('sreehari'));

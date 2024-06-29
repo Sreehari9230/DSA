@@ -58,6 +58,25 @@ class doublyLinkedList{
         this.size--
     }
 
+    remove(index){
+        if(index>this.size||index<0){
+            return null
+        }else if(index == 0){
+            this.removeFrmFront()
+        }else{
+            let prev = this.head
+            for(let i=0;i<index-1;i++){
+                prev = prev.next
+            }
+            if(prev.next){
+                let rNode = prev.next
+                prev.next = rNode.next
+                rNode.next.prev = prev
+            }
+            this.size--
+        }
+    }
+
     removeFrmEnd(){
         if(this.size == 1){
             this.head = null
@@ -157,10 +176,11 @@ const list = new doublyLinkedList()
 list.append(1)
 list.append(2)
 list.append(4)
-list.print()
+// list.print()
 list.insert(3,2)
+list.remove(0)
 list.print()
-console.log(list.isCircular());
+// console.log(list.isCircular());
 
 
 

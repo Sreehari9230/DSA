@@ -1,9 +1,9 @@
 let batMan = {
-    fname:'Bruce',
-    lname:'Wayne',
-    'gf-Name':'catWomen',
-    fullName: function(){
-        console.log(this.fname,this.lname)
+    fname: 'Bruce',
+    lname: 'Wayne',
+    'gf-Name': 'catWomen',
+    fullName: function () {
+        console.log(this.fname, this.lname)
     }
 
 }
@@ -35,8 +35,8 @@ let Vcount = {
 //         Vcount[str[i]]++
 //     }
 // }
-for(let char of str){
-    if(vowels.includes(char)){
+for (let char of str) {
+    if (vowels.includes(char)) {
         Vcount[char]++
     }
 }

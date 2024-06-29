@@ -119,4 +119,3 @@ list.display()
 // console.log(list.deleteMiddle())
 list.display()
 console.log(list.isCirular());
-

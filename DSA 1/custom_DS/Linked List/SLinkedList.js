@@ -51,7 +51,7 @@ class LinkedList {
                 this.size--
                 return value
             }
-            return null
+            // return null
         }
     }
     removeIndex(index) {
@@ -123,6 +123,35 @@ class LinkedList {
         }
         this.head = prev
     }
+
+    // reverse(){
+    //     if(this.isEmpty()){
+    //         null
+    //     }else{
+    //         let prev = null
+    //         let curr = this.head
+    //         while(curr){
+    //             let next = curr.next
+    //             curr.next = prev
+    //             prev = curr
+    //             curr = next
+    //         }
+    //         this.head = prev
+    //     }
+    // }
+
+    // reverse123(){
+    //     let prev = null
+    //     let curr  =this.head
+    //     while(curr){
+    //         let next = curr.next
+    //         curr.next = prev
+    //         prev = curr
+    //         curr = next
+    //     }
+    //     this.head = prev
+
+    // }
     print() {
         if (this.isEmpty()) {
             console.log('List is empty');

@@ -37,16 +37,16 @@
 //1539. Kth missing positive Number
 
 // arr = [2,3,4,7,11], k = 5
-function findKth(arr,k){
+function findKth(arr, k) {
     let count = 0
-    for(let i=0;i<arr.length;i++){
-        if(arr[i]<=k+count){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] <= k + count) {
             count++
         }
     }
-    return k+count
+    return k + count
 }
-console.log(findKth([2,3,4,7,11],6))
+console.log(findKth([2, 3, 4, 7, 11], 6))
 
 
 

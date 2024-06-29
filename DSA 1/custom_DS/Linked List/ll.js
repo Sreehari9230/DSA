@@ -73,7 +73,7 @@ class LinkedList {
     printRev(){
         let curr = this.head
         let prev = null
-        while(curr){
+        while (curr) {
             let next = curr.next
             curr.next = prev
             prev = curr
@@ -92,12 +92,14 @@ const List = new LinkedList()
 List.insert(10, 0)
 List.insert(20, 1)
 List.insert(30, 2)
-console.log(List.print())
+// console.log(List.print())
 
-console.log(List.getSize());
+// console.log(List.getSize());
 
-List.removeValue(10)
+// List.removeValue(10)
+// console.log(List.print())
+// console.log(List.getSize());
 console.log(List.print())
-console.log(List.getSize());
 List.printRev()
+console.log(List.print())
 

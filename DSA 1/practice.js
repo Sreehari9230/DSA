@@ -134,7 +134,7 @@
 //         }
 //         this.size++
 //     }
-    
+
 
 //     print() {
 //         if (this.isEmpty()) {
@@ -159,3 +159,47 @@
 // list.prepend(0)
 // list.print()
 // console.log(list.getSize());
+
+//covert a string to a linked list
+
+
+
+
+//Binary Search
+// function Bsearch(arr, target) {
+//     let start = 0
+//     let end = arr.length - 1
+//     while (end >= start) {
+//         let middle = Math.floor((start + end) / 2)
+//         if (arr[middle] == target) {
+//             return middle
+//         } else if (arr[middle] > target) {
+//             end = middle - 1
+//         } else if (arr[middle] < target) {
+//             start = middle + 1
+//         }
+//     }
+//     return -1
+// }
+// console.log(Bsearch([1, 2, 3, 4, 5, 6], 6))
+
+
+// function BsearchRecursion(arr, target, start = 0, end = arr.length) {
+//     if (start > end) {
+//         return -1
+//     }
+//     let middle = Math.floor((start + end) / 2)
+
+//     if (arr[middle] == target) {
+//         return middle
+//     } else if (arr[middle] > target) {
+//         end = middle - 1
+//         return BsearchRecursion(arr, target, start, end)
+//     } else {
+//         start = middle + 1
+//         return BsearchRecursion(arr, target, start, end)
+//     }
+// }
+// console.log(BsearchRecursion([1,2,3,4,5,6,7,8,9],10));
+
+// 
